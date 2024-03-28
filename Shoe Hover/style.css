@@ -31,6 +31,7 @@
      /*border: 2px solid yellow;*/
      overflow: hidden;
      transition: 2s ;
+     border-radius: 15%;
 }
 
 .container .shoes .image{
@@ -64,6 +65,7 @@
 .container .shoes:hover{
      height: 60%;
      scale: 1.1;
+     border-radius: 0%;
      .image
      {
           border-radius: 0%;
