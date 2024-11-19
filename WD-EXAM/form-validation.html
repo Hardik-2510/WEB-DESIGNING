@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+   
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+        <br><br>
+
+        <input type="submit" value="Register">
+        <p id="errorMsg" style="color:red;"></p>
+    </form>
+
+	<script>
+	
+		function validateForm() {
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const phone = document.getElementById('phone').value;
+    const errorMsg = document.getElementById('errorMsg');
+    errorMsg.textContent = ""; // Clear previous error message
+
+    // Regular Expressions
+    const usernameRegex = /^[a-zA-Z0-9]{5,12}$/; // Alphanumeric, between 5 to 12 characters
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Standard email format
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // Minimum 8 characters, at least one letter and one number
+    const phoneRegex = /^\d{10}$/; // Exactly 10 digits
+
+    // Username validation
+    if (!usernameRegex.test(username)) {
+        errorMsg.textContent = "Invalid username. Must be 5-12 characters long and alphanumeric.";
+        return false;
+    }
+
+    // Email validation
+    if (!emailRegex.test(email)) {
+        errorMsg.textContent = "Invalid email format.";
+        return false;
+    }
+
+    // Password validation
+    if (!passwordRegex.test(password)) {
+        errorMsg.textContent = "Invalid password. Must be at least 8 characters long and contain at least one number.";
+        return false;
+    }
+
+    // Phone number validation
+    if (!phoneRegex.test(phone)) {
+        errorMsg.textContent = "Invalid phone number. Must be exactly 10 digits.";
+        return false;
+    }
+
+    // If all validations pass
+    alert("Registration successful!");
+    return true;
+}
+
+	
+	
+	
+	
+	</script>
+
+</body>
+</html>
