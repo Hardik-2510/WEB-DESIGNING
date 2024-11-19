@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WD - PRACTICAL - 12</title>
+</head>
+<body>
+
+    <!-- print date  -->
+    <p id="DateDemo"></p>
+
+    <!-- object value print -->
+     <p id="ObjectValue"></p>
+
+     <!-- Array using for loop -->
+    <p id="ArrayDemo"></p>
+
+    <!-- Stirng -->
+     <p id="stringDemo"></p>
+
+
+    <script>
+
+        // Date in Js
+        const d = new Date("2023-10-25");
+        const date = document.getElementById("DateDemo").innerHTML = d;
+
+        // Object in JS
+        const human = {name:"Hardik" , age: 19 , city:"Surat"}
+        document.getElementById("ObjectValue").innerText = human.name + " " +human.age ;
+
+        // Array in JS
+        const fruits = [" Apple " , " Banana " , " Mango "]
+        document.getElementById("ArrayDemo").innerHTML = fruits;
+
+        // String in JS
+        const str = `This is a Example of String , This Array Elements \"${fruits}\" , This is length of String :- ` ;
+        const strL = str.length;
+        document.getElementById("stringDemo").innerHTML = str + " " + strL;
+
+
+        // PopBoxes in Js
+        alert("Hello From Deveopers Community !");
+        confirm("This site is JS");
+            
+    </script>
+</body>
+</html>
